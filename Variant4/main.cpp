@@ -12,7 +12,7 @@ struct EMPLOYEE {   // Структура - сотрудник
 };
 void print_employee(ostream& out, vector<EMPLOYEE>& Employees) {    // Печатаем массив сотрудников
     for (auto& pos : Employees)        //Перебираем элементы в списке
-        out << "Сотрудник " << pos.fio << ", принят " << pos.date << ", должность " << pos.position << ", доход " << pos.salary << endl;
+        out << "Сотрудник: " << pos.fio << ", принят: " << pos.date << ", должность: " << pos.position << ", доход: " << pos.salary << endl;
 }
 void write_text(ostream& out,EMPLOYEE& c) {     // Записываем одного сотрудника в файл в текстовом режиме
     out << c.fio << ends << c.date << ends << c.position << ends;   // Каждая строка с новой строки
