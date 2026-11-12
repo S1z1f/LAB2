@@ -15,11 +15,11 @@ void print_employee(ostream& out, vector<EMPLOYEE>& Employees) {    // Печа�
         out << "Сотрудник " << pos.fio << ", принят " << pos.date << ", должность " << pos.position << ", доход " << pos.salary << endl;
 }
 void write_text(ostream& out,EMPLOYEE& c) {     // Записываем одного сотрудника в файл в текстовом режиме
-    out << c.fio << endl << c.date << endl << c.position << endl;   // Каждая строка с новой строки
+    out << c.fio << ends << c.date << ends << c.position << ends;   // Каждая строка с новой строки
     out << c.salary << endl;    // Число на отдельной строке
 }
 void write_binary(ostream& out,EMPLOYEE& c) {   // Записываем одного сотрудника в файл в двоичном виде
-    out << c.fio << endl << c.date << endl << c.position << '\0';   // После строк вставляем 0, как признак конца
+    out << c.fio << ends << c.date << ends << c.position << ends;   // После строк вставляем 0, как признак конца
     out.write((char*)&c.salary, sizeof(c.salary));      //Записываем число по байтам
 }
 void read_text(istream& in,EMPLOYEE& c) {   // Чтение одного сотрудника из файла в текстовом режиме
@@ -53,7 +53,7 @@ int main(int args, const char* argv[]) {
         for (int i = 0; i < n; i++) {       // Цикл ввода данных о сотрудниках с клавиатуры
             cout << "Сотрудник " << (i + 1) << endl;
             cin.ignore();       // Пропускаем символ перехода на новую строку
-            cout << "FIO: ";
+            cout << "ФИО: ";
             getline(cin, Employees[i].fio);
             cout << "Дата трудоустройства (ДД.MM.ГГГГ): ";
             getline(cin, Employees[i].date);
@@ -137,3 +137,4 @@ int main(int args, const char* argv[]) {
     }
     return 0;
 }
+
