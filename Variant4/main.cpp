@@ -15,7 +15,7 @@ void print_employee(ostream& out, vector<EMPLOYEE>& Employees) {    // Печа�
         out << "Сотрудник: " << pos.fio << ", принят: " << pos.date << ", должность: " << pos.position << ", доход: " << pos.salary << endl;
 }
 void write_text(ostream& out,EMPLOYEE& c) {     // Записываем одного сотрудника в файл в текстовом режиме
-    out << c.fio << ends << c.date << ends << c.position << ends;   // Каждая строка с новой строки
+    out << c.fio << endl << c.date << endl << c.position << endl;   // Каждая строка с новой строки
     out << c.salary << endl;    // Число на отдельной строке
 }
 void write_binary(ostream& out,EMPLOYEE& c) {   // Записываем одного сотрудника в файл в двоичном виде
@@ -100,7 +100,7 @@ int main(int args, const char* argv[]) {
                 return 1;   //Возвращаем код ошибки
             }
             Employees.resize(n); // Задаем размер массива
-            for (auto & pos : Employees) read_text(fint, pos);
+            for (auto& pos : Employees) read_text(fint, pos);
             if (!fint) {// Данные в файле закончились раньше времен
                 cout << endl << "Error, wrong file format" << endl;
                 return 1;
