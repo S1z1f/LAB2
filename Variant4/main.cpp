@@ -51,18 +51,18 @@ int main(int args, const char* argv[]) {
         cout << "n="; cin >> n;     // Ввод числа сотрудников
         Employees.resize(n);        // Задаем размер массива
         for (int i = 0; i < n; i++) {       // Цикл ввода данных о сотрудниках с клавиатуры
-            cout << "Employee " << (i + 1) << endl;
+            cout << "Сотрудник " << (i + 1) << endl;
             cin.ignore();       // Пропускаем символ перехода на новую строку
             cout << "FIO: ";
             getline(cin, Employees[i].fio);
-            cout << "Hire date (DD.MM.YYYY): ";
+            cout << "Дата трудоустройства (ДД.MM.ГГГГ): ";
             getline(cin, Employees[i].date);
-            cout << "Position: ";
+            cout << "Должность: ";
             getline(cin, Employees[i].position);
-            cout << "Base salary: "; cin >> Employees[i].salary;
+            cout << "Доход: "; cin >> Employees[i].salary;
         }
 
-        cout << endl << "Entered data: " << endl;   // Выводим введенные данные
+        cout << endl << "Введённые данные: " << endl;   // Выводим введенные данные
         print_employee(cout, Employees);
         if (open_mode == "text") {      // Работа с файлом в текстовом режиме
             ofstream foutt(file_name);  // Открываем файл для записи в текстовом режиме
